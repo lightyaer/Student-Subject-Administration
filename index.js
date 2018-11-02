@@ -17,7 +17,7 @@ let subjectsChoice = [[], [], [], [], []];
 let subscribedSuject = [], overSubscribedSubjects = [];
 let unSubscribedSubjects = [], underSubscribedSubjects = [];
 let properlySubscribedSubjects = [];
-let noOfChoicesLeft = 0;
+let noOfLostCHoiceByStudent = 0;
 let defaulters = [], studentsSubscribedToSingleGroup = [];
 let sparePlaces = [], totalSparePlaces = 0;
 
@@ -32,22 +32,34 @@ let setup = () => {
 
 }
 
-let taskOne = () => {
-    students.forEach(choice => {
+let noOfStudentsLostChoices = () => {
+
+    students.forEach((choice) => {
         //Adding Students who have not chosen any subjects
-        if (!choice.subject1 && !choice.subject2) {
+        if (choice.subject1 === null && choice.subject2 === null) {
 
             defaulters.push(choice);
+            return noOfLostCHoiceByStudent += 1;
+        }
+        if ((choice.subject1 === null) || (choice.subject21 === null)) {
+            return noOfLostCHoiceByStudent += 1;
 
         }
+    })
+
+}
+
+
+let taskOne = () => {
+    let count = 0;
+    noOfStudentsLostChoices();
+    students.forEach(choice => {
 
         //Filtering Students who have chosen the same subject for both choices
         //It is counted as one choice
         if (choice.subject1 && choice.subject2 && choice.subject1 === choice.subject2) {
-            noOfChoicesLeft += 1;
             studentsSubscribedToSingleGroup.push(choice.name);
             return subjectsChoice[choice.subject1].push(choice);
-
         }
 
 
@@ -57,20 +69,14 @@ let taskOne = () => {
 
             subjectsChoice[choice.subject1].push(choice);
 
-        } else {
-            noOfChoicesLeft += 1;
         }
         if (choice.subject2) {
 
             subjectsChoice[choice.subject2].push(choice);
 
-        } else {
-            noOfChoicesLeft += 1;
-
         }
     });
     listInitialData();
-
 }
 
 let taskTwo = async () => {
@@ -92,10 +98,10 @@ let taskTwo = async () => {
         } else if (choices.length >= 10 && choices.length <= 20) {
 
             properlySubscribedSubjects.push({ subjectName: subjects[index], index });
-            sparePlaces.push({ subjectName: subjects[index], index, sparePlace: 20 - choices.length, total: 20, })
+            sparePlaces.push({ subjectName: subjects[index], index, sparePlace: 20 - choices.length, placesTaken: choices.length, total: 20 })
         } else if (choices.length > 20) {
             overSubscribedSubjects.push({ subjectName: subjects[index], index })
-            sparePlaces.push({ subjectName: subjects[index], index, sparePlace: 40 - choices.length, total: 40 })
+            sparePlaces.push({ subjectName: subjects[index], index, sparePlace: 40 - choices.length, placesTaken: choices.length, total: 40 })
         }
 
         choices.map((choice) => {
@@ -114,8 +120,6 @@ let taskTwo = async () => {
 let taskThree = () => {
 
     listSparePlaces();
-
-
 }
 
 let main = () => {
@@ -123,6 +127,7 @@ let main = () => {
     taskOne();
     taskTwo();
     taskThree();
+
 }
 
 let listDefaulters = () => {
@@ -159,7 +164,7 @@ let listSubscribedAndUnscbscribedSubjects = () => {
         fs.appendFileSync(outputFile, subject.subjectName + "\n");
     });
 
-    fs.appendFileSync(outputFile, "\nProperly Subjects\n");
+    fs.appendFileSync(outputFile, "\nProperly Subscribed Subjects\n");
     properlySubscribedSubjects.map((subject) => {
         fs.appendFileSync(outputFile, subject.subjectName + "\n");
     });
@@ -181,8 +186,15 @@ let listSparePlaces = () => {
         fs.appendFileSync(outputFile, subject.subjectName + " = " + subject.sparePlace + "/" + subject.total + "\n");
     });
 
-    fs.appendFileSync(outputFile, "\nTotal Spare Places " + totalSparePlaces);
-    fs.appendFileSync(outputFile, "\nTotal Unallocated Choices " + noOfChoicesLeft);
+    fs.appendFileSync(outputFile, "\nTotal Spare Places after creating Subject Group " + totalSparePlaces);
+
+    fs.appendFileSync(outputFile, "\nTotal Students who lost the choice/s / Unallocated Choice " + noOfLostCHoiceByStudent);
+    if (totalSparePlaces - noOfLostCHoiceByStudent > 1) {
+        fs.appendFileSync(outputFile, "\nYES!!, remaining Students can be accomidated in made up Subject Groups");
+    } else {
+        fs.appendFileSync(outputFile, "\nNO!!, remaining Students can't accomidated in made up Subject Groups");
+    }
+
 
 }
 

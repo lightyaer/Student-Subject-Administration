@@ -107,7 +107,6 @@ Noam Snoden
 Students who have not selected any subject, thus not allocated to any group
 Bab Josebury
 Lottie Winear
-Viviyan FitzGeorge
 Tonya Tebbutt
 Shaun Blaschek
 
@@ -127,7 +126,7 @@ Over Subscribed Subjects
 Geography
 Computer Science
 
-Properly Subjects
+Properly Subscribed Subjects
 Chemistry
 History
 
@@ -146,5 +145,6 @@ History = 7/20
 Geography = 16/40
 Computer Science = 14/40
 
-Total Spare Places 38
-Total Unallocated Choices 38
+Total Spare Places after creating Subject Group 38
+Total Students who lost the choice/s / Unallocated Choice 4
+YES!!, remaining Students can be accomidated in made up Subject Groups

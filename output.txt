@@ -1,0 +1,150 @@
+TASK 1 => The Subject and its Distrubution based on Data.
+Physics = 0
+Chemistry = 19
+History = 13
+Geography = 24
+Computer Science = 26
+
+TASK 2 => Names of students in each Subject Group
+Physics
+
+
+Chemistry
+Jenn Harbage
+Larina Downs
+Jo Lehrahan
+Dewie Bernon
+Westley Laurance
+Marilyn Sweeny
+Jeane McVitty
+Debora Witcombe
+Whitby Kilday
+Kial Fleming
+Caterina Stivani
+Anthony Lomis
+Raina Starbucke
+Sloane Seleway
+Niel Pourvoieur
+Fiona Pipet
+Jannelle Goudy
+Hanny Brinsden
+Waverly Pabel
+
+
+History
+Reginald Angrave
+Auroora Vlasyev
+Samara Cockitt
+Bernardine Brownsea
+Boony Coram
+Rosita Feld
+Kimberly Towl
+Harlene St. Paul
+Milka Heaton
+Matthew Kersey
+Aubree Virr
+Dorolisa Siveter
+Sloane Seleway
+
+
+Geography
+Reginald Angrave
+Xena Marfield
+Bryan Crew
+Sibylle McGuckin
+Larina Downs
+Annabel Rantoul
+Dewie Bernon
+Christiano McAloren
+Harlene St. Paul
+Matthew Kersey
+Dahlia Coetzee
+Dorolisa Siveter
+Norbie Hardman
+Gifford Kemwall
+Eleni Paylie
+Evanne Eglise
+Artemus Giacoppoli
+Raimund Dincke
+Joycelin Daubney
+Muire Trembey
+Mahmoud Glabach
+Jannelle Goudy
+Wilek Hasluck
+Noam Snoden
+
+
+Computer Science
+Sibylle McGuckin
+Jo Lehrahan
+Annabel Rantoul
+Boony Coram
+Rosita Feld
+Milka Heaton
+Dahlia Coetzee
+Jeane McVitty
+Ardath Dadson
+Sybilla Preston
+Abeu Eastcourt
+Gifford Kemwall
+Carolynn Whilde
+Berty Brotherhed
+Debora Witcombe
+Kial Fleming
+Anthony Lomis
+Cherie Ellams
+Evanne Eglise
+Raimund Dincke
+Joycelin Daubney
+Fiona Pipet
+Wilek Hasluck
+Hanny Brinsden
+Earle Asple
+Noam Snoden
+
+
+
+Students who have not selected any subject, thus not allocated to any group
+Bab Josebury
+Lottie Winear
+Viviyan FitzGeorge
+Tonya Tebbutt
+Shaun Blaschek
+
+UnSelected Subjects
+Physics
+
+Selected Subjects
+Chemistry
+History
+Geography
+Computer Science
+
+Under Subscribed Subjects
+Physics
+
+Over Subscribed Subjects
+Geography
+Computer Science
+
+Properly Subjects
+Chemistry
+History
+
+Students Subscribing to Single Subject
+Bryan Crew
+Auroora Vlasyev
+Jenn Harbage
+Christiano McAloren
+Ardath Dadson
+Caterina Stivani
+Artemus Giacoppoli
+
+Spare Places in Each Subject Group
+Chemistry = 1/20
+History = 7/20
+Geography = 16/40
+Computer Science = 14/40
+
+Total Spare Places 38
+Total Unallocated Choices 38
